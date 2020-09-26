@@ -1,4 +1,7 @@
 {
+	"engines": {
+		"node": "12.x"
+	},
 	"name": "server",
 	"version": "0.0.0",
 	"description": "",
