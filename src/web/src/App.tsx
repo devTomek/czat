@@ -1,20 +1,17 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
+import useTasks from "./useTasks";
 
 const App: FC = () => {
-  useEffect(() => {
-    fetch("/api/todos")
-      .then((res) => res.json())
-      .then(console.log)
-      .catch(console.error);
-  }, []);
+	const [tasks] = useTasks();
 
   return (
-    <h1>
+    <div>
       It Works!{" "}
       <span role="img" aria-label="lol">
         👨🏻‍💻
       </span>
-    </h1>
+			{tasks.map(({task}, index) => <h1 key={index}>{task}</h1>)}
+    </div>
   );
 };
 
