@@ -8,8 +8,7 @@
 	"main": "build/server.js",
 	"scripts": {
 		"build": "rm -rf ./build && tsc",
-		"start-dev": "concurrently \"tsc -w\" \"nodemon\" ",
-		"start": "concurrently \"tsc -w\" \"nodemon build/server.js\" "
+		"start": "concurrently \"tsc -w\" \"nodemon\" "
 	},
 	"author": "Tomasz Chybzinski",
 	"license": "MIT",
