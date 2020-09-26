@@ -1,6 +1,13 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 
 const App: FC = () => {
+  useEffect(() => {
+    fetch("/api/todos")
+      .then((res) => res.json())
+      .then(console.log)
+      .catch(console.error);
+  }, []);
+
   return (
     <h1>
       It Works!{" "}
