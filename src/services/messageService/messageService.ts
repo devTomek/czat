@@ -17,8 +17,33 @@ const addMessage = (author: string, text: string): void => {
 	messages.push(message);
 };
 
+const updateMessage = (
+	messageId: string,
+	author: string,
+	text: string
+): void => {
+	const messageToChageIndex = messages.findIndex(
+		(message) => message.id === messageId
+	);
+	messages[messageToChageIndex] = {
+		id: messageId,
+		author,
+		text,
+	};
+};
+
+// todo doesn't work
+const deleteMessage = (messageId: string): void => {
+	const messageIndex = messages.findIndex(
+		(message) => message.id === messageId
+	);
+	messages.splice(messageIndex, 1);
+};
+
 export const messageService = {
 	getMessage,
 	getMessages,
 	addMessage,
+	updateMessage,
+	deleteMessage,
 };
